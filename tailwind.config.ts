@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -18,6 +19,9 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'fredoka': ['Fredoka', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -61,7 +65,14 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Kid-friendly colors
+				'kid-blue': '#6FAADB',
+				'kid-yellow': '#FFE55C',
+				'kid-pink': '#FFB3D9',
+				'kid-green': '#7ED4AD',
+				'kid-purple': '#C8A8E9',
+				'kid-orange': '#FFB366',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +95,49 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'bounce-in': {
+					'0%': {
+						transform: 'scale(0.3)',
+						opacity: '0'
+					},
+					'50%': {
+						transform: 'scale(1.05)'
+					},
+					'70%': {
+						transform: 'scale(0.9)'
+					},
+					'100%': {
+						transform: 'scale(1)',
+						opacity: '1'
+					}
+				},
+				'wiggle': {
+					'0%, 100%': {
+						transform: 'rotate(-3deg)'
+					},
+					'50%': {
+						transform: 'rotate(3deg)'
+					}
+				},
+				'celebration': {
+					'0%, 100%': {
+						transform: 'rotate(0deg) scale(1)'
+					},
+					'25%': {
+						transform: 'rotate(-5deg) scale(1.1)'
+					},
+					'75%': {
+						transform: 'rotate(5deg) scale(1.1)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'bounce-in': 'bounce-in 0.6s ease-out',
+				'wiggle': 'wiggle 1s ease-in-out infinite',
+				'celebration': 'celebration 0.6s ease-in-out'
 			}
 		}
 	},
